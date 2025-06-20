@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>Confirmar Exclusão</h2>
+<div mat-dialog-content>
+  <p>Tem certeza que deseja excluir o funcionário <strong>{{ nome }}</strong>?</p>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-button (click)="onCancelar()">Cancelar</button>
+  <button mat-raised-button color="warn" (click)="onConfirmar()">Excluir</button>
+</div>

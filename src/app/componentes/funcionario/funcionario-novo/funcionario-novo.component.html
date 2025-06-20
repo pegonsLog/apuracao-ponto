@@ -1,0 +1,18 @@
+<div class="mat-elevation-z2" style="margin: 24px; max-width: 500px;">
+  <h2>Novo Funcionário</h2>
+  <form #funcionarioForm="ngForm" (ngSubmit)="salvarFuncionario()">
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <mat-label>Nome</mat-label>
+      <input matInput name="nome" [(ngModel)]="funcionario.nome" required />
+    </mat-form-field>
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <mat-label>Cargo</mat-label>
+      <input matInput name="cargo" [(ngModel)]="funcionario.cargo" required />
+    </mat-form-field>
+    <div style="margin-top: 24px; display: flex; gap: 12px;">
+      <button mat-raised-button color="primary" type="submit">Salvar</button>
+      <button mat-raised-button color="accent" type="button" [routerLink]="['/funcionarios']">Cancelar</button>
+    </div>
+  </form>
+</div>
+
