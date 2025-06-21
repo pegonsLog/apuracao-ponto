@@ -1,0 +1,30 @@
+.container {
+  margin: 24px;
+}
+
+.container-titulo {
+  margin: 20px;
+}
+
+.header {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; // Alinha os itens com espaço entre eles
+  padding: 20px;
+  background-color: #78c7ef;
+  color: #ffffff;
+}
+
+.title {
+  flex-grow: 1; // Permite que o título ocupe o espaço disponível
+  text-align: center; // Centraliza o texto do título
+  margin: 0;
+  // Adiciona uma margem à direita para compensar o espaço do botão e manter o título visualmente centrado
+  margin-right: 56px; // Ajuste este valor se o tamanho do botão mudar
+}
+
+.mat-table {
+  width: 100%;
+}

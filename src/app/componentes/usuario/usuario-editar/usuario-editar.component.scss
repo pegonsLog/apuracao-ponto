@@ -12,9 +12,9 @@ mat-card {
 }
 
 mat-card-header {
-  background-color: #58ceef; // Teal
+  background-color: #58ceef;
   color: white;
-
+  padding: 20px;
 }
 
 mat-card-title {
@@ -25,7 +25,6 @@ mat-card-title {
 mat-card-content form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 
 mat-form-field {
@@ -48,7 +47,7 @@ mat-card-actions {
   font-size: 1.2rem;
   display: flex;
   align-items: center;
-  justify-content: space-between; // Alinha os itens com espaço entre eles
+  justify-content: space-between;
   padding: 20px;
   background-color: #78c7ef;
   color: #ffffff;

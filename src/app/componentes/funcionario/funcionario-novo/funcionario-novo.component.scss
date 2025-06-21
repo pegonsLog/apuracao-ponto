@@ -1,0 +1,55 @@
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 24px;
+}
+
+mat-card {
+  width: 100%;
+  max-width: 500px;
+}
+
+mat-card-header {
+  background-color: #58ceef; // Teal
+  color: white;
+  padding: 20px;
+}
+
+mat-card-title {
+  text-align: center;
+  width: 100%;
+}
+
+mat-card-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 16px;
+}
+
+.container-titulo {
+  margin: 20px;
+}
+
+.header {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; // Alinha os itens com espaço entre eles
+  padding: 20px;
+  background-color: #78c7ef;
+  color: #ffffff;
+}

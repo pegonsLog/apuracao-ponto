@@ -1,0 +1,79 @@
+<div class="main-container">
+  <mat-card class="mat-elevation-z8">
+    <mat-card-header>
+      <mat-card-title class="card-title">Imprimir Folha de Ocorrências</mat-card-title>
+      <div class="header-actions">
+        <button mat-icon-button (click)="logout()" matTooltip="Sair">
+          <mat-icon>logout</mat-icon>
+        </button>
+      </div>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="botoes-acao">
+        <button mat-stroked-button (click)="adicionarFuncionario()">
+          <mat-icon>add_circle_outline</mat-icon>
+          Adicionar Funcionário
+        </button>
+        <button mat-stroked-button (click)="listarFuncionarios()">
+          <mat-icon>list_alt</mat-icon>
+          Listar Funcionários
+        </button>
+        <button mat-stroked-button (click)="listarUsuarios()">
+          <mat-icon>group</mat-icon>
+          Listar Usuários
+        </button>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div class="secao-ocorrencias">
+
+        <mat-radio-group [(ngModel)]="tipoImpressao" class="radio-group-impressao">
+          <mat-radio-button value="geral">Imprimir Geral</mat-radio-button>
+          <mat-radio-button value="individual">Imprimir por Funcionário</mat-radio-button>
+        </mat-radio-group>
+
+        <div *ngIf="tipoImpressao === 'individual'">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Selecione o Funcionário</mat-label>
+            <mat-select [(ngModel)]="funcionarioSelecionadoId" required>
+              <mat-option *ngFor="let funcionario of funcionarios$ | async" [value]="funcionario.id">
+                {{ funcionario.nome }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="periodo-inputs">
+          <mat-form-field appearance="outline">
+            <mat-label>Data de Início</mat-label>
+            <input matInput [matDatepicker]="pickerInicio" [(ngModel)]="dataInicio" required>
+            <mat-datepicker-toggle matSuffix [for]="pickerInicio"></mat-datepicker-toggle>
+            <mat-datepicker #pickerInicio></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Data de Fim</mat-label>
+            <input matInput [matDatepicker]="pickerFim" [(ngModel)]="dataFim" required>
+            <mat-datepicker-toggle matSuffix [for]="pickerFim"></mat-datepicker-toggle>
+            <mat-datepicker #pickerFim></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+
+    <mat-card-actions class="card-actions">
+      <button mat-raised-button color="accent" (click)="imprimirSelecionado()" [disabled]="!dataInicio || !dataFim || !funcionarioSelecionadoId">
+        <mat-icon>print</mat-icon>
+        Imprimir Selecionado
+      </button>
+      <button mat-raised-button color="warn" (click)="imprimirTodos()" [disabled]="!dataInicio || !dataFim">
+        <mat-icon>print_outline</mat-icon>
+        Imprimir Todos
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+

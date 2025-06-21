@@ -2,34 +2,33 @@
   <mat-card>
     <div class="container-titulo">
       <div class="header">
-        <p class="title">Novo Funcionário</p>
+        <p class="title">Novo Usuário</p>
         <div>
-          <button mat-fab color="accent" aria-label="Voltar para a lista" [routerLink]="['/funcionarios']">
+          <button mat-fab color="accent" aria-label="Voltar para a lista" [routerLink]="['/usuarios']">
             <mat-icon>arrow_back</mat-icon>
           </button>
         </div>
       </div>
     </div>
     <mat-card-content>
-      <form #funcionarioForm="ngForm" (ngSubmit)="salvarFuncionario()">
+      <form #usuarioForm="ngForm" (ngSubmit)="salvarUsuario()">
         <mat-form-field appearance="fill">
-          <mat-label>Matrícula</mat-label>
-          <input matInput name="matricula" [(ngModel)]="funcionario.matricula" />
+          <mat-label>Usuário</mat-label>
+          <input matInput name="usuario" [(ngModel)]="usuario.usuario" required />
         </mat-form-field>
         <mat-form-field appearance="fill">
           <mat-label>Nome</mat-label>
-          <input matInput name="nome" [(ngModel)]="funcionario.nome" required />
+          <input matInput name="nome" [(ngModel)]="usuario.nome" required />
         </mat-form-field>
         <mat-form-field appearance="fill">
-          <mat-label>Cargo</mat-label>
-          <input matInput name="cargo" [(ngModel)]="funcionario.cargo" required />
+          <mat-label>Senha</mat-label>
+          <input matInput name="senha" type="password" [(ngModel)]="usuario.senha" required />
         </mat-form-field>
         <mat-card-actions>
           <button mat-raised-button color="primary" type="submit">Salvar</button>
-          <button mat-raised-button color="accent" type="button" [routerLink]="['/funcionarios']">Cancelar</button>
+          <button mat-raised-button color="accent" type="button" [routerLink]="['/usuarios']">Cancelar</button>
         </mat-card-actions>
       </form>
     </mat-card-content>
   </mat-card>
 </div>
-

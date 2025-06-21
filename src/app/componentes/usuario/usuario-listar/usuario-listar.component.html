@@ -1,0 +1,53 @@
+<mat-card class="container">
+  <div class="container-titulo">
+    <div class="header">
+      <p class="title">Lista de Usuários</p>
+      <div>
+        <button mat-fab color="accent" aria-label="Voltar para Início" [routerLink]="['/principal']" style="margin-right: 10px;">
+          <mat-icon>home</mat-icon>
+        </button>
+        <button mat-fab color="primary" aria-label="Adicionar Usuário" [routerLink]="['/usuarios/novo']">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <mat-card-content>
+    <table mat-table [dataSource]="usuarios" class="mat-table">
+      <!-- Usuário Column -->
+      <ng-container matColumnDef="usuario">
+        <th mat-header-cell *matHeaderCellDef> Usuário </th>
+        <td mat-cell *matCellDef="let usuario"> {{usuario.usuario}} </td>
+      </ng-container>
+
+      <!-- Nome Column -->
+      <ng-container matColumnDef="nome">
+        <th mat-header-cell *matHeaderCellDef> Nome </th>
+        <td mat-cell *matCellDef="let usuario"> {{usuario.nome}} </td>
+      </ng-container>
+
+      <!-- Senha Column -->
+      <ng-container matColumnDef="senha">
+        <th mat-header-cell *matHeaderCellDef> Senha </th>
+        <td mat-cell *matCellDef="let usuario"> {{usuario.senha}} </td>
+      </ng-container>
+
+      <!-- Ações Column -->
+      <ng-container matColumnDef="acoes">
+        <th mat-header-cell *matHeaderCellDef> Ações </th>
+        <td mat-cell *matCellDef="let usuario">
+          <button mat-icon-button color="primary" [routerLink]="['/usuarios/editar', usuario.id]">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="excluirUsuario(usuario.id, usuario.usuario)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="['usuario', 'nome', 'senha', 'acoes']"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['usuario', 'nome', 'senha', 'acoes'];"></tr>
+    </table>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,29 @@
+.container {
+  margin: 24px;
+}
+
+.container-titulo {
+  margin: 20px;
+}
+
+.header {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  padding: 20px;
+  background-color: #78c7ef;
+  color: #ffffff;
+}
+
+.title {
+  flex-grow: 1; 
+  text-align: center; 
+  margin: 0;
+  margin-right: 56px; 
+}
+
+.mat-table {
+  width: 100%;
+}

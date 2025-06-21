@@ -1,41 +1,49 @@
-<div class="mat-elevation-z2" style="margin: 24px;">
-  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
-    <h2 style="margin: 0;">Lista de Funcionários</h2>
-    <button mat-fab color="primary" aria-label="Adicionar Funcionário" [routerLink]="['/funcionarios/novo']">
-      <mat-icon>add</mat-icon>
-    </button>
+<mat-card class="container">
+  <div class="container-titulo">
+    <div class="header">
+      <p class="title">Lista de Funcionários</p>
+      <div>
+        <button mat-fab color="accent" aria-label="Voltar para Início" [routerLink]="['/principal']" style="margin-right: 10px;">
+          <mat-icon>home</mat-icon>
+        </button>
+        <button mat-fab color="primary" aria-label="Adicionar Funcionário" [routerLink]="['/funcionarios/novo']">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+    </div>
   </div>
 
-  <table mat-table [dataSource]="funcionarios" class="mat-table" style="width: 100%;">
-    <!-- Nome Column -->
-    <ng-container matColumnDef="nome">
-      <th mat-header-cell *matHeaderCellDef> Nome </th>
-      <td mat-cell *matCellDef="let funcionario"> {{funcionario.nome}} </td>
-    </ng-container>
-    <!-- Matricula Column -->
-    <ng-container matColumnDef="matricula">
-      <th mat-header-cell *matHeaderCellDef> Matrícula </th>
-      <td mat-cell *matCellDef="let funcionario"> {{funcionario.matricula}} </td>
-    </ng-container>
-    <!-- Cargo Column -->
-    <ng-container matColumnDef="cargo">
-      <th mat-header-cell *matHeaderCellDef> Cargo </th>
-      <td mat-cell *matCellDef="let funcionario"> {{funcionario.cargo}} </td>
-    </ng-container>
-    <!-- Ações Column -->
-    <ng-container matColumnDef="acoes">
-      <th mat-header-cell *matHeaderCellDef> Ações </th>
-      <td mat-cell *matCellDef="let funcionario">
-        <button mat-icon-button color="primary" [routerLink]="['/funcionarios/editar', funcionario.id]">
-          <mat-icon>edit</mat-icon>
-        </button>
-        <button mat-icon-button color="warn" (click)="excluirFuncionario(funcionario.id, funcionario.nome)">
-          <mat-icon>delete</mat-icon>
-        </button>
-      </td>
-    </ng-container>
-    <tr mat-header-row *matHeaderRowDef="['nome', 'matricula', 'cargo', 'acoes']"></tr>
-    <tr mat-row *matRowDef="let row; columns: ['nome', 'matricula', 'cargo', 'acoes'];"></tr>
-  </table>
-</div>
-
+  <mat-card-content>
+    <table mat-table [dataSource]="funcionarios" class="mat-table">
+      <!-- Nome Column -->
+      <ng-container matColumnDef="nome">
+        <th mat-header-cell *matHeaderCellDef> Nome </th>
+        <td mat-cell *matCellDef="let funcionario"> {{funcionario.nome}} </td>
+      </ng-container>
+      <!-- Matricula Column -->
+      <ng-container matColumnDef="matricula">
+        <th mat-header-cell *matHeaderCellDef> Matrícula </th>
+        <td mat-cell *matCellDef="let funcionario"> {{funcionario.matricula}} </td>
+      </ng-container>
+      <!-- Cargo Column -->
+      <ng-container matColumnDef="cargo">
+        <th mat-header-cell *matHeaderCellDef> Cargo </th>
+        <td mat-cell *matCellDef="let funcionario"> {{funcionario.cargo}} </td>
+      </ng-container>
+      <!-- Ações Column -->
+      <ng-container matColumnDef="acoes">
+        <th mat-header-cell *matHeaderCellDef> Ações </th>
+        <td mat-cell *matCellDef="let funcionario">
+          <button mat-icon-button color="primary" [routerLink]="['/funcionarios/editar', funcionario.id]">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="excluirFuncionario(funcionario.id, funcionario.nome)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="['nome', 'matricula', 'cargo', 'acoes']"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['nome', 'matricula', 'cargo', 'acoes'];"></tr>
+    </table>
+  </mat-card-content>
+</mat-card>

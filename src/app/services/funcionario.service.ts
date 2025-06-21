@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collectionData, collection, doc, setDoc, updateDoc, deleteDoc } from '@angular/fire/firestore';
+import { Firestore, collection, collectionData, doc, updateDoc, deleteDoc, addDoc, query, orderBy, docData, setDoc } from '@angular/fire/firestore';
 import { Funcionario } from '../models/funcionario';
 import { Observable } from 'rxjs';
 
@@ -12,7 +12,13 @@ export class FuncionarioService {
   }
 
   getFuncionarios(): Observable<Funcionario[]> {
-    return collectionData(this.funcionariosCollection, { idField: 'id' }) as Observable<Funcionario[]>;
+    const q = query(this.funcionariosCollection, orderBy('nome'));
+    return collectionData(q, { idField: 'id' }) as Observable<Funcionario[]>;
+  }
+
+  getFuncionario(id: string): Observable<Funcionario> {
+    const funcionarioDocument = doc(this.firestore, `funcionarios/${id}`);
+    return docData(funcionarioDocument, { idField: 'id' }) as Observable<Funcionario>;
   }
 
   addFuncionario(funcionario: Funcionario) {

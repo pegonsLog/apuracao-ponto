@@ -1,18 +1,30 @@
-<div class="mat-elevation-z2" style="margin: 24px; max-width: 500px;">
-  <h2>Editar Funcionário</h2>
-  <form #funcionarioForm="ngForm" (ngSubmit)="atualizarFuncionario()">
-    <mat-form-field appearance="fill" style="width: 100%;">
-      <mat-label>Nome</mat-label>
-      <input matInput name="nome" [(ngModel)]="funcionario.nome" required />
-    </mat-form-field>
-    <mat-form-field appearance="fill" style="width: 100%;">
-      <mat-label>Cargo</mat-label>
-      <input matInput name="cargo" [(ngModel)]="funcionario.cargo" required />
-    </mat-form-field>
-    <div style="margin-top: 24px; display: flex; gap: 12px;">
-      <button mat-raised-button color="primary" type="submit">Salvar</button>
-      <button mat-raised-button color="accent" type="button" [routerLink]="['/funcionarios']">Cancelar</button>
+<div class="form-container">
+  <mat-card *ngIf="funcionario">
+    <div class="container-titulo">
+      <div class="header">
+        <p class="title">Editar Funcionário</p>
+        <div>
+          <button mat-fab color="accent" aria-label="Voltar para a lista" [routerLink]="['/funcionarios']">
+            <mat-icon>arrow_back</mat-icon>
+          </button>
+        </div>
+      </div>
     </div>
-  </form>
+    <mat-card-content>
+      <form #funcionarioForm="ngForm" (ngSubmit)="atualizarFuncionario()">
+        <mat-form-field appearance="fill">
+          <mat-label>Nome</mat-label>
+          <input matInput name="nome" [(ngModel)]="funcionario.nome" required />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Cargo</mat-label>
+          <input matInput name="cargo" [(ngModel)]="funcionario.cargo" required />
+        </mat-form-field>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" type="submit">Salvar</button>
+          <button mat-raised-button color="accent" type="button" [routerLink]="['/funcionarios']">Cancelar</button>
+        </mat-card-actions>
+      </form>
+    </mat-card-content>
+  </mat-card>
 </div>
-

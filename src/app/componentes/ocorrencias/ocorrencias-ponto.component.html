@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="page-header no-print">
+    <div>
+      <button mat-fab color="accent" aria-label="Voltar para Início" [routerLink]="['/principal']">
+        <mat-icon>home</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <div *ngFor="let funcionario of funcionarios" class="folha-ponto-container page-break">
+    <div class="pagina">
+      <div class="cabecalho-folha">
+        <div class="info-item">
+          <strong>PERÍODO:</strong>
+          <span>{{ dataInicio | date: 'dd/MM/yyyy' }} à {{ dataFim | date: 'dd/MM/yyyy' }}</span>
+        </div>
+        <div class="info-item">
+          <strong>FUNCIONÁRIO:</strong>
+          <span>{{ funcionario.matricula }} - {{ funcionario.nome }}</span>
+        </div>
+        <div class="info-item">
+          <strong>FUNÇÃO:</strong>
+          <span>{{ funcionario.cargo }}</span>
+        </div>
+      </div>
+      <table class="tabela-ocorrencias">
+        <thead>
+          <tr>
+            <th class="col-data">Data</th>
+            <th class="col-ocorrencias">Ocorrências</th>
+            <th class="col-de-acordo">De Acordo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let dia of diasPeriodo">
+            <td class="col-data">{{ dia }}</td>
+            <td class="col-ocorrencias"></td>
+            <td class="col-de-acordo"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

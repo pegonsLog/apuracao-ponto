@@ -5,15 +5,17 @@ import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { RouterModule, ActivatedRoute, Router } from '@angular/router';
 import { FuncionarioService } from '../../../services/funcionario.service';
 import { Funcionario } from '../../../models/funcionario';
 import { OnInit } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-funcionario-editar',
   standalone: true,
-  imports: [CommonModule, FormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, RouterModule],
+  imports: [CommonModule, FormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, RouterModule, MatCardModule, MatIconModule],
   templateUrl: './funcionario-editar.component.html',
   styleUrl: './funcionario-editar.component.scss'
 })

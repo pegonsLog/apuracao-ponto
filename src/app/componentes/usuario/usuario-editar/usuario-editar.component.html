@@ -1,0 +1,34 @@
+<div class="form-container">
+  <mat-card *ngIf="usuario">
+    <div class="container-titulo">
+      <div class="header">
+        <p class="title">Editar Usuário</p>
+        <div>
+          <button mat-fab color="accent" aria-label="Voltar para a lista" [routerLink]="['/usuarios']">
+            <mat-icon>arrow_back</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+    <mat-card-content>
+      <form #usuarioForm="ngForm" (ngSubmit)="atualizarUsuario()">
+        <mat-form-field appearance="fill">
+          <mat-label>Usuário</mat-label>
+          <input matInput name="usuario" [(ngModel)]="usuario.usuario" required readonly>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Nome</mat-label>
+          <input matInput name="nome" [(ngModel)]="usuario.nome" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Nova Senha</mat-label>
+          <input matInput name="senha" type="password" [(ngModel)]="usuario.senha">
+        </mat-form-field>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" type="submit">Salvar</button>
+          <button mat-raised-button color="accent" type="button" [routerLink]="['/usuarios']">Cancelar</button>
+        </mat-card-actions>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

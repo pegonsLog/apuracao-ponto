@@ -1,0 +1,121 @@
+:host {
+  --primary-color: #3f51b5; // Indigo
+  --accent-color: #009688; // Teal
+  --warn-color: #f44336;   // Red
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #ece9e6 0%, #ffffff 100%);
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+mat-card {
+  max-width: 650px;
+  width: 100%;
+  border-radius: 12px; // Bordas mais arredondadas
+}
+
+mat-card-header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1.5rem;
+  margin: 20px 24px -30px 24px;
+}
+
+.header-actions {
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+
+  button {
+    color: white; // Garante que o ícone seja visível
+  }
+}
+
+.card-title {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+mat-card-content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  padding: 2rem 1.5rem;
+}
+
+.botoes-acao {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.secao-ocorrencias {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  h3 {
+    text-align: center;
+    font-weight: 500;
+    color: #424242;
+    margin: 0;
+    font-size: 1.2rem;
+  }
+}
+
+.periodo-inputs {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-between;
+
+  mat-form-field {
+    flex: 1;
+  }
+}
+
+.full-width {
+  width: 100%;
+}
+
+.radio-group-impressao {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 1.2rem;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: -1rem;
+  gap: 1rem;
+  padding: 0 1.5rem 1.5rem;
+
+  button {
+    flex: 1;
+    padding: 12px 0;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+}
+
+// Estilo para os botões com ícones
+button[mat-stroked-button], button[mat-raised-button] {
+  mat-icon {
+    margin-right: 8px;
+  }
+}
