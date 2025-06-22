@@ -16,18 +16,19 @@
 .container-titulo {
   background-color: #78c7ef;
   color: #ffffff;
-  padding: 20px 24px;
+  padding: 24px 24px;
 }
 
 .title {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.2rem;
   font-weight: 500;
-  margin: 0;
+  margin: 0px
 }
 
 mat-card-content {
-  padding: 24px; /* Adiciona o espaçamento branco ao redor do formulário */
+  padding: 24px;
+  margin-bottom: 12px;
 }
 
 mat-card-content form {
@@ -40,7 +41,7 @@ mat-form-field {
 }
 
 mat-card-header {
-  margin: 20px 24px 0px 24px;
+  margin: 28px 24px 0px 24px;
 }
 
 .login-button {

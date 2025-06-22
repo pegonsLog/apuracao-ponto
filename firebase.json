@@ -6,7 +6,7 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
-    "public": "dist/apuracao-ponto",
+    "public": "dist/apuracao-ponto/browser",
     "ignore": [
       "firebase.json",
       "**/.*",
