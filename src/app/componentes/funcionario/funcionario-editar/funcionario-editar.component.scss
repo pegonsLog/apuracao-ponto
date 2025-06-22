@@ -14,7 +14,6 @@ mat-card {
 mat-card-header {
   background-color: #58ceef; // Teal
   color: white;
-
 }
 
 mat-card-title {
@@ -25,7 +24,7 @@ mat-card-title {
 mat-card-content form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 2px;
 }
 
 mat-form-field {
@@ -52,4 +51,6 @@ mat-card-actions {
   padding: 20px;
   background-color: #78c7ef;
   color: #ffffff;
+  margin-right: -4px;
+  margin-left: -4px;
 }
