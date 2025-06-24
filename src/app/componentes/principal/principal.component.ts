@@ -86,13 +86,15 @@ export class PrincipalComponent implements OnInit {
 
   imprimirSelecionado() {
     if (this.dataInicio && this.dataFim && this.funcionarioSelecionadoId) {
-      this.router.navigate(['/ocorrencias'], {
-        queryParams: { 
-          inicio: this.dataInicio, 
-          fim: this.dataFim, 
-          funcionarioId: this.funcionarioSelecionadoId 
+      const urlTree = this.router.createUrlTree(['/ocorrencias'], {
+        queryParams: {
+          inicio: this.dataInicio,
+          fim: this.dataFim,
+          funcionarioId: this.funcionarioSelecionadoId
         }
       });
+      const url = this.router.serializeUrl(urlTree);
+      window.open(url, '_blank');
     } else {
       alert('Por favor, preencha o período de datas!');
     }
@@ -100,13 +102,15 @@ export class PrincipalComponent implements OnInit {
 
   imprimirTodos() {
     if (this.dataInicio && this.dataFim) {
-      this.router.navigate(['/ocorrencias'], {
-        queryParams: { 
-          inicio: this.dataInicio, 
+      const urlTree = this.router.createUrlTree(['/ocorrencias'], {
+        queryParams: {
+          inicio: this.dataInicio,
           fim: this.dataFim,
           lote: true
         }
       });
+      const url = this.router.serializeUrl(urlTree);
+      window.open(url, '_blank');
     } else {
       alert('Por favor, preencha o período de datas!');
     }

@@ -37,6 +37,10 @@
 }
 
 .tabela-ocorrencias {
+  td {
+    padding-top: 8px;
+    padding-bottom: 7px;
+  }
   width: 100%;
   border-collapse: collapse;
   border: 1px solid #000;
@@ -96,5 +100,13 @@
 
   .page-break {
     page-break-after: always;
+  }
+
+  .tabela-ocorrencias {
+    td {
+      // Garante que o padding seja aplicado na impressão
+      padding-top: 6px !important;
+      padding-bottom: 6px !important;
+    }
   }
 }
